@@ -15,25 +15,18 @@ contract AuctionTest is Test {
         vm.deal(address(victim), 1);
 
         vm.startPrank(victim);
-        address(auction).call{value: 1}(abi.encodeWithSignature("placeBid(uint256)", 1));
+        (bool success, ) = address(auction).call{value: 1}(abi.encodeWithSignature("placeBid(uint256)", 1));
+        require(success, "Something went wrong");
         vm.warp(vm.getBlockTimestamp() + 86401);
     }
 
     function test_StealReward() public {
         /* 
-            Description: 
+            Description: In this exercise, our goal is to steal the reward from the Auction contract as the attacker contract.
             
-            In this exercise, our goal is to steal the reward from the Auction contract as the attacker contract.
-            
-            Goal: 
-            
-            The exercise is complete if the attacker won the 100 ether making a bid of 1 wei.
+            Goal: The exercise is complete if the attacker won the 100 ether making a bid of 1 wei.
 
-            Tips:
-
-            - To call the Auction contract, you can write the following code:
-                - auction.nameOfFunction(arg1);
- 
+            Tips: To call the Auction contract, you can write the following code: auction.nameOfFunction(arg1);
         */ 
 
         // This impersonates the attacker contract

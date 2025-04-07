@@ -16,25 +16,22 @@ contract VaultTest is Test {
 
     function test_StealEth() public {
         /* 
-            Description: 
+            Description: In this exercise, our goal is to steal the Eth stored in the Vault contract as the attacker contract.
             
-            In this exercise, our goal is to steal the Eth stored in the Vault contract as the attacker contract.
-            
-            Goal: 
-            
-            The exercise is complete if the attacker has the 1,000 ether. 
+            Goal: The exercise is complete if the attacker has the 1,000 ether. 
 
-            Tips:
-
-            - To call the Vault contract, you can write the following code:
-                - vault.nameOfFunction(arg1);
+            Tip: To call the Vault contract, you can write the following code: vault.nameOfFunction(arg1);
  
         */ 
 
         // This impersonates the attacker contract
         vm.startPrank(attacker);
         
-        // EXERCISE: Add solution below
+
+        // TIP: To simulate moving forward in time to withdraw funds, you can use the following code: 
+        // vm.warp(block.timestamp + 86401);
+ 
+        // EXERCISE: Add solution below.
 
         assertEq(attacker.balance, 1000 ether);
         assertEq(victim.balance, 0);

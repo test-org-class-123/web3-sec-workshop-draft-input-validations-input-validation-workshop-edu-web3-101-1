@@ -18,20 +18,13 @@ contract InvestmentManagerTest is Test {
 
     function test_StealInvestment() public {
         /* 
-            Description: 
-            
-            In this exercise, our goal is to fix the InvestmentManager contract so that the 
+            Description: In this exercise, our goal is to fix the InvestmentManager contract so that the 
             attacker can't withdraw more funds than they deposited.
             
-            Goal: 
-            
-            Apply the proper fix to the InvestmentManager contract. You are not allowed to modify the test.
+            Goal: Apply the proper fix to the InvestmentManager contract. You are not allowed to modify the test.
             The exercise is complete if the attacker has 0 ether. 
 
-            Tips:
-
-            - To call the Vault contract, you can write the following code: vault.nameOfFunction(arg1);
- 
+            Tips: To call the Vault contract, you can write the following code: vault.nameOfFunction(arg1);
         */ 
 
         // This impersonates the attacker contract

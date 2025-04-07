@@ -1,66 +1,23 @@
-## Foundry
+# Input Validation Homework
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Assignment #1 – Auction Exercise
 
-Foundry consists of:
+In this exercise, you’ll audit an Auction contract (see [here](./src/Auction.sol)) that lets users place bids. After 24 hours, the highest bidder should be able to claim the reward.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+**Problem**: How could someone claim the reward even if they never placed a bid? Update the test file here to simulate an attacker stealing the reward.
 
-## Documentation
+ 
+## Assignment #2 – InvestmentManager Exercise
 
-https://book.getfoundry.sh/
+The InvestmentManager contract allows users to deposit and withdraw ETH. But something’s wrong — attackers are able to steal ETH from it.
 
-## Usage
+**Problem**: Update the [withdrawFunds function](./src/InvestmentManager.sol) to prevent users from withdrawing funds they shouldn’t be able to.
 
-### Build
+ 
+## Assignment #3 – Vault Exercise
 
-```shell
-$ forge build
-```
+In this final exercise, the Vault contract lets users deposit ETH then withdraw Eth after one day, with a 1 ETH bonus.
 
-### Test
+**Problem**: Update the [Vault test](./test/Vault.t.sol) to simulate a user withdrawing more than they actually deposited.
 
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+ 
